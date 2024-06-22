@@ -23,10 +23,10 @@ app.post('/proxy', (req, res) => {
         return;
     }
 
-    const url = url.startsWith('http') ? url : 'http://' + url;
+    const outputurl = url.startsWith('http') ? url : 'http://' + url;
 
     const options = {
-        target: url,
+        target: outputurl,
         changeOrigin: true,
         pathRewrite: {
             [`^/proxy`]: '',
